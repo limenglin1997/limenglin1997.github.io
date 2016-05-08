@@ -45,20 +45,4 @@
     
   </entry>
   
-  <entry>
-    <title>hello world</title>
-    <link href="http://yoursite.com/2016/05/07/hello-world-1/"/>
-    <id>http://yoursite.com/2016/05/07/hello-world-1/</id>
-    <published>2016-05-07T14:36:23.000Z</published>
-    <updated>2016-05-07T14:36:23.550Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
 </feed>

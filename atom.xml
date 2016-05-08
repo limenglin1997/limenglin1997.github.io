@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>My Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-05-08T07:16:34.057Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>limenglin</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新的开始</title>
+    <link href="http://yoursite.com/2016/05/08/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    <id>http://yoursite.com/2016/05/08/新的开始/</id>
+    <published>2016-05-08T07:06:21.000Z</published>
+    <updated>2016-05-08T07:16:34.057Z</updated>
+    
+    <content type="html">&lt;p&gt;###这是&lt;strong&gt;新的开始&lt;/strong&gt;，我用Hexo创建的第一篇文章。&lt;/p&gt;
+&lt;embed src=&quot;http://music.163.com/style/swf/widget.swf?sid=117831058&amp;type=0&amp;auto=0&amp;width=310&amp;height=430&quot; width=&quot;330&quot; height=&quot;450&quot; allownetworking=&quot;all&quot;&gt;
+
+
+
+
+
+
+
+
+
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;###这是&lt;strong&gt;新的开始&lt;/strong&gt;，我用Hexo创建的第一篇文章。&lt;/p&gt;
+&lt;embed src=&quot;http://music.163.com/style/swf/widget.swf?sid=117831058&amp;type=0&amp;auto=0&amp;width=31
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hello world</title>
+    <link href="http://yoursite.com/2016/05/07/hello-world-1/"/>
+    <id>http://yoursite.com/2016/05/07/hello-world-1/</id>
+    <published>2016-05-07T14:36:23.000Z</published>
+    <updated>2016-05-07T14:36:23.550Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

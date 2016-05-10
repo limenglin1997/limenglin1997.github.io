@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-08T07:16:34.057Z</updated>
+  <updated>2016-05-10T11:43:40.590Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,122 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>初识Git</title>
+    <link href="http://yoursite.com/2016/05/08/%E5%88%9D%E8%AF%86Git/"/>
+    <id>http://yoursite.com/2016/05/08/初识Git/</id>
+    <published>2016-05-08T14:12:14.000Z</published>
+    <updated>2016-05-10T11:43:40.590Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;第一次学习Git算是笔记吧。&lt;/p&gt;
+&lt;p&gt;所以这是一篇我自认为比较重要的 Git 技能表，主要供自己查阅使用，反复查阅能够加深印象，提升技能熟练度。如果你是还不知道 Git 是什么，建议先阅读&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的Git教程&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Git是什么？&quot;&gt;&lt;a href=&quot;#Git是什么？&quot; class=&quot;headerlink&quot; title=&quot;Git是什么？&quot;&gt;&lt;/a&gt;Git是什么？&lt;/h3&gt;&lt;p&gt;Git是目前世界上最先进的分布式版本控制系统。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;Git安装&quot;&gt;&lt;a href=&quot;#Git安装&quot; class=&quot;headerlink&quot; title=&quot;Git安装&quot;&gt;&lt;/a&gt;Git安装&lt;/h3&gt;&lt;h4 id=&quot;Linux上安装Git-Debian-Ubuntu&quot;&gt;&lt;a href=&quot;#Linux上安装Git-Debian-Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;Linux上安装Git(Debian/Ubuntu)&quot;&gt;&lt;/a&gt;Linux上安装Git(Debian/Ubuntu)&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ sudo apt-get install git
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;Mac-OS-X上安装Git&quot;&gt;&lt;a href=&quot;#Mac-OS-X上安装Git&quot; class=&quot;headerlink&quot; title=&quot;Mac OS X上安装Git&quot;&gt;&lt;/a&gt;Mac OS X上安装Git&lt;/h4&gt;&lt;p&gt;直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode，选择菜单“Xcode”-&amp;gt;“Preferences”，在弹出窗口中找到“Downloads”，选择“Command Line Tools”，点“Install”就可以完成安装了。&lt;/p&gt;
+&lt;h4 id=&quot;Windows上安装Git&quot;&gt;&lt;a href=&quot;#Windows上安装Git&quot; class=&quot;headerlink&quot; title=&quot;Windows上安装Git&quot;&gt;&lt;/a&gt;Windows上安装Git&lt;/h4&gt;&lt;p&gt;在Windows上安装git，一般为msysgit。从&lt;a href=&quot;https://git-for-windows.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;下载然后按默认选项安装即可。&lt;/p&gt;
+&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;you name&amp;quot;
+$ git config --global user.email &amp;quot;邮件地址@youremail.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;git config&lt;/strong&gt;命令的&lt;strong&gt;–global&lt;/strong&gt;参数，表示你这台机器上所有的Git仓库都会使用这个配置&lt;/p&gt;
+&lt;h3 id=&quot;创建新仓库-版本库&quot;&gt;&lt;a href=&quot;#创建新仓库-版本库&quot; class=&quot;headerlink&quot; title=&quot;创建新仓库(版本库)&quot;&gt;&lt;/a&gt;创建新仓库(版本库)&lt;/h3&gt;&lt;p&gt;什么是版本库呢？版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。&lt;/p&gt;
+&lt;p&gt;所以，创建一个版本库非常简单，首先，选择一个合适的地方(F:\code)，创建一个空目录(learngit)：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mkdir learngit  # mkdir命令创建learn_git目录(目录里什么都没有)
+$ cd learn_git  # cd命令进入learn_git目录
+$ pwd  # pwd命令用于显示当前目录
+f/code/learn_git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;如果使用Windows系统，为了避免遇到各种莫名其妙的问题，请确保目录名（包括父目录）不包含中文&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;第二步，通过git init命令把这个目录变成Git可以管理的仓库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git init
+Initialized empty Git repository in F:/code/learn_git/.git/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时候你当前learn_git目录下会多了一个.git的目录，这个目录是Git来跟踪管理版本的，没事千万不要手动乱改这个目录里面的文件，否则，会把git仓库给破坏了。&lt;/p&gt;
+&lt;p&gt;如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用&lt;strong&gt;ls -ah&lt;/strong&gt;命令就可以看见。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;把文件添加到版本库中&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;首先要明确下，所有的版本控制系统，只能跟踪文本文件的改动，比如txt文件，网页，所有程序的代码等，Git也不列外，版本控制系统可以告诉你每次的改动，但是图片，视频这些二进制文件，虽能也能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是知道图片从1kb变成2kb，但是到底改了啥，版本控制也不知道。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用Windows的童鞋要特别注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;千万不要使用Windows自带的记事本编辑任何文本文件。建议你下载&lt;a href=&quot;https://notepad-plus-plus.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Notepad++&lt;/a&gt;代替记事本，不但功能强大，而且免费！记得把Notepad++的默认编码设置为UTF-8 without BOM即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下面先看下demo如下演示&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;现在我们编写一个readme.txt文件，内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Git is a version control system.
+Git is free software.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一定要放到&lt;strong&gt;learn_git&lt;/strong&gt;目录下（子目录也行），因为这是一个Git仓库，放到其他地方Git再厉害也找不到这个文件。&lt;/p&gt;
+&lt;p&gt;和把大象放到冰箱需要3步相比，把一个文件放到Git仓库只需要两步。&lt;/p&gt;
+&lt;p&gt;第一步，用命令&lt;strong&gt;git add&lt;/strong&gt;告诉Git，把文件添加到仓库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git add readme.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行上面的命令，没有任何显示，这就对了。&lt;/p&gt;
+&lt;p&gt;第二步，用命令&lt;strong&gt;git commit&lt;/strong&gt;告诉Git，把文件提交到仓库:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git commit -m &amp;quot;wrote a readme file&amp;quot;
+[master (root-commit) 3504943] worte a readme file
+1 file changed, 2 insertions(+)
+create mode 100644 readme.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;简单解释一下&lt;strong&gt;git commit&lt;/strong&gt;命令，&lt;strong&gt;-m&lt;/strong&gt;后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。&lt;/p&gt;
+&lt;p&gt;嫌麻烦不想输入&lt;strong&gt;-m “xxx”&lt;/strong&gt;行不行？确实有办法可以这么干，但是强烈不建议你这么干，因为输入说明对自己对别人阅读都很重要。&lt;/p&gt;
+&lt;h3 id=&quot;时光机穿梭&quot;&gt;&lt;a href=&quot;#时光机穿梭&quot; class=&quot;headerlink&quot; title=&quot;时光机穿梭&quot;&gt;&lt;/a&gt;时光机穿梭&lt;/h3&gt;&lt;p&gt;我们已经成功地添加并提交了一个readme.txt文件，现在，是时候继续工作了，于是，我们继续修改readme.txt文件，改成如下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Git is a distributed version control system.
+Git is free software.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在，运行&lt;strong&gt;git status&lt;/strong&gt;命令看看结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git status
+On branch master
+Changes not staged for commit:
+  (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)
+  (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory)
+     modified:   readme.txt
+no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;git status&lt;/strong&gt;命令可以让我们时刻掌握仓库当前的状态，上面的命令告诉我们，readme.txt被修改过了，但还没有准备提交的修改。&lt;/p&gt;
+&lt;p&gt;虽然Git告诉我们readme.txt被修改了，但如果能看看具体修改了什么内容，自然是很好的。比如你休假两周从国外回来，第一天上班时，已经记不清上次怎么修改的readme.txt，所以，需要用&lt;strong&gt;git diff&lt;/strong&gt;这个命令看看：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git diff readme.txt
+diff --git a/readme.txt b/readme.txt
+index d8036c1..013b5bc 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+-Git is a version control system.
++Git is a distributed version control system.
+Git is free software.
+\ No newline at end of file
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;git diff&lt;/strong&gt;顾名思义就是查看difference，显示的格式正是Unix通用的diff格式，可以从上面的命令输出看到，我们在第一行添加了一个“distributed”单词。&lt;/p&gt;
+&lt;p&gt;知道了对readme.txt作了什么修改后，再把它提交到仓库就放心多了，提交修改和提交新文件是一样的两步，第一步是&lt;strong&gt;git add&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git add readme.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;同样没有任何输出。在执行第二步&lt;strong&gt;git commit&lt;/strong&gt;之前，我们再运行&lt;strong&gt;git status&lt;/strong&gt;看看当前仓库的状态：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;On branch master
+Changes to be committed:
+  (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage)
+        modified:   readme.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;git status&lt;/strong&gt;告诉我们，将要被提交的修改包括readme.txt，下一步，就可以放心地提交了：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git commit -m &amp;quot;add distributed&amp;quot;
+[master e89a0ef] add distributed
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;提交后，我们再用&lt;strong&gt;git status&lt;/strong&gt;命令看看仓库的当前状态：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$  git status
+On branch master
+nothing to commit, working directory clean
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Git告诉我们当前没有需要提交的修改，而且，工作目录是干净（working directory clean）的。&lt;/p&gt;
+&lt;h3 id=&quot;待续&quot;&gt;&lt;a href=&quot;#待续&quot; class=&quot;headerlink&quot; title=&quot;待续&quot;&gt;&lt;/a&gt;待续&lt;/h3&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;110&quot; src=&quot;http://music.163.com/outchain/player?type=0&amp;id=117831058&amp;auto=1&amp;height=90&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;…………&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;第一次学习Git算是笔记吧。&lt;/p&gt;
+&lt;p&gt;所以这是一篇我自认为比较重要的 Git 技能表，主要供自己查阅使用，反复查阅能够加深印象，提升技能熟练度。如果你是还不知道 Git 是什么，建议先阅读&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot;&gt;廖雪峰的Git教程&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Git是什么？&quot;&gt;&lt;a href=&quot;#Git是什么？&quot; class=&quot;headerlink&quot; title=&quot;Git是什么？&quot;&gt;&lt;/a&gt;Git是什么？&lt;/h3&gt;&lt;p&gt;Git是目前世界上最先进的分布式版本控制系统。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>新的开始</title>
     <link href="http://yoursite.com/2016/05/08/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
     <id>http://yoursite.com/2016/05/08/新的开始/</id>
     <published>2016-05-08T07:06:21.000Z</published>
-    <updated>2016-05-08T07:16:34.057Z</updated>
+    <updated>2016-05-08T19:04:02.286Z</updated>
     
     <content type="html">&lt;p&gt;###这是&lt;strong&gt;新的开始&lt;/strong&gt;，我用Hexo创建的第一篇文章。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;embed src=&quot;http://music.163.com/style/swf/widget.swf?sid=117831058&amp;type=0&amp;auto=0&amp;width=310&amp;height=430&quot; width=&quot;330&quot; height=&quot;450&quot; allownetworking=&quot;all&quot;&gt;
 
 
@@ -38,7 +147,6 @@
     <summary type="html">
     
       &lt;p&gt;###这是&lt;strong&gt;新的开始&lt;/strong&gt;，我用Hexo创建的第一篇文章。&lt;/p&gt;
-&lt;embed src=&quot;http://music.163.com/style/swf/widget.swf?sid=117831058&amp;type=0&amp;auto=0&amp;width=31
     
     </summary>
     

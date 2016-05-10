@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-10T11:43:40.590Z</updated>
+  <updated>2016-05-10T11:51:59.235Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,15 +20,15 @@
     <link href="http://yoursite.com/2016/05/08/%E5%88%9D%E8%AF%86Git/"/>
     <id>http://yoursite.com/2016/05/08/初识Git/</id>
     <published>2016-05-08T14:12:14.000Z</published>
-    <updated>2016-05-10T11:43:40.590Z</updated>
+    <updated>2016-05-10T11:51:59.235Z</updated>
     
     <content type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;第一次学习Git算是笔记吧。&lt;/p&gt;
 &lt;p&gt;所以这是一篇我自认为比较重要的 Git 技能表，主要供自己查阅使用，反复查阅能够加深印象，提升技能熟练度。如果你是还不知道 Git 是什么，建议先阅读&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的Git教程&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Git是什么？&quot;&gt;&lt;a href=&quot;#Git是什么？&quot; class=&quot;headerlink&quot; title=&quot;Git是什么？&quot;&gt;&lt;/a&gt;Git是什么？&lt;/h3&gt;&lt;p&gt;Git是目前世界上最先进的分布式版本控制系统。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;Git是什么？&quot;&gt;&lt;a href=&quot;#Git是什么？&quot; class=&quot;headerlink&quot; title=&quot;Git是什么？&quot;&gt;&lt;/a&gt;Git是什么？&lt;/h3&gt;&lt;p&gt;Git是目前世界上最先进的分布式版本控制系统。&lt;/p&gt;
 &lt;h3 id=&quot;Git安装&quot;&gt;&lt;a href=&quot;#Git安装&quot; class=&quot;headerlink&quot; title=&quot;Git安装&quot;&gt;&lt;/a&gt;Git安装&lt;/h3&gt;&lt;h4 id=&quot;Linux上安装Git-Debian-Ubuntu&quot;&gt;&lt;a href=&quot;#Linux上安装Git-Debian-Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;Linux上安装Git(Debian/Ubuntu)&quot;&gt;&lt;/a&gt;Linux上安装Git(Debian/Ubuntu)&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ sudo apt-get install git
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;Mac-OS-X上安装Git&quot;&gt;&lt;a href=&quot;#Mac-OS-X上安装Git&quot; class=&quot;headerlink&quot; title=&quot;Mac OS X上安装Git&quot;&gt;&lt;/a&gt;Mac OS X上安装Git&lt;/h4&gt;&lt;p&gt;直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode，选择菜单“Xcode”-&amp;gt;“Preferences”，在弹出窗口中找到“Downloads”，选择“Command Line Tools”，点“Install”就可以完成安装了。&lt;/p&gt;
-&lt;h4 id=&quot;Windows上安装Git&quot;&gt;&lt;a href=&quot;#Windows上安装Git&quot; class=&quot;headerlink&quot; title=&quot;Windows上安装Git&quot;&gt;&lt;/a&gt;Windows上安装Git&lt;/h4&gt;&lt;p&gt;在Windows上安装git，一般为msysgit。从&lt;a href=&quot;https://git-for-windows.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;下载然后按默认选项安装即可。&lt;/p&gt;
+&lt;h4 id=&quot;Windows上安装Git&quot;&gt;&lt;a href=&quot;#Windows上安装Git&quot; class=&quot;headerlink&quot; title=&quot;Windows上安装Git&quot;&gt;&lt;/a&gt;Windows上安装Git&lt;/h4&gt;&lt;p&gt;在Windows上安装git，一般为msysgit。从&lt;strong&gt;&lt;a href=&quot;https://git-for-windows.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;&lt;/strong&gt;下载然后按默认选项安装即可。&lt;/p&gt;
 &lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;you name&amp;quot;
 $ git config --global user.email &amp;quot;邮件地址@youremail.com&amp;quot;
@@ -65,7 +65,7 @@ Git is free software.
 create mode 100644 readme.txt
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;简单解释一下&lt;strong&gt;git commit&lt;/strong&gt;命令，&lt;strong&gt;-m&lt;/strong&gt;后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。&lt;/p&gt;
 &lt;p&gt;嫌麻烦不想输入&lt;strong&gt;-m “xxx”&lt;/strong&gt;行不行？确实有办法可以这么干，但是强烈不建议你这么干，因为输入说明对自己对别人阅读都很重要。&lt;/p&gt;
-&lt;h3 id=&quot;时光机穿梭&quot;&gt;&lt;a href=&quot;#时光机穿梭&quot; class=&quot;headerlink&quot; title=&quot;时光机穿梭&quot;&gt;&lt;/a&gt;时光机穿梭&lt;/h3&gt;&lt;p&gt;我们已经成功地添加并提交了一个readme.txt文件，现在，是时候继续工作了，于是，我们继续修改readme.txt文件，改成如下内容：&lt;/p&gt;
+&lt;h3 id=&quot;时光穿梭？&quot;&gt;&lt;a href=&quot;#时光穿梭？&quot; class=&quot;headerlink&quot; title=&quot;时光穿梭？&quot;&gt;&lt;/a&gt;时光穿梭？&lt;/h3&gt;&lt;p&gt;我们已经成功地添加并提交了一个readme.txt文件，现在，是时候继续工作了，于是，我们继续修改readme.txt文件，改成如下内容：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Git is a distributed version control system.
 Git is free software.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在，运行&lt;strong&gt;git status&lt;/strong&gt;命令看看结果：&lt;/p&gt;
@@ -114,7 +114,6 @@ nothing to commit, working directory clean
     
       &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;第一次学习Git算是笔记吧。&lt;/p&gt;
 &lt;p&gt;所以这是一篇我自认为比较重要的 Git 技能表，主要供自己查阅使用，反复查阅能够加深印象，提升技能熟练度。如果你是还不知道 Git 是什么，建议先阅读&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot;&gt;廖雪峰的Git教程&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Git是什么？&quot;&gt;&lt;a href=&quot;#Git是什么？&quot; class=&quot;headerlink&quot; title=&quot;Git是什么？&quot;&gt;&lt;/a&gt;Git是什么？&lt;/h3&gt;&lt;p&gt;Git是目前世界上最先进的分布式版本控制系统。&lt;/p&gt;
     
     </summary>
     
